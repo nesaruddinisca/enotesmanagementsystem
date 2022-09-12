@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show Users</title>
+</head>
+<body>
+	<section>
+		<div class="container-fluid p-3 mt-5">
+			<div class="col-md-10 offset-md-1">
+				<div class="card paint-card">
+					<h1 class="text-center text-success"><span style="font-family: 'Monotype Corsiva';">Show User </span></h1>
+					<hr>
+					<div th:if="${session.msg}" class="text-center" role="alert">
+
+						<h4 class="text-success" th:text="${session.msg}"></h4>
+						<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+					</div>
+					<div class="card-body">
+						<table class="table">
+						<thead>
+						<tr>
+						<th>SL No.</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Role</th>
+						<th>About</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<td>1</td>
+						<td>Nesar Uddin</td>
+						<td>nesaruddin227@gmail.com</td>
+						<td>Admin</td>
+						<td>Java Developer</td>
+						</tr>
+						<tr>
+						<td>2</td>
+						<td>Arafat Rimon</td>
+						<td>rimon@gmail.com</td>
+						<td>User</td>
+						<td>Backend Developer</td>
+						</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
